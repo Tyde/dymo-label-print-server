@@ -92,7 +92,7 @@ async fn print_label(payload: web::Json<PrintRequest>) -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    println!("Starting label print server...");
+    println!("Starting label print server.");
     env_logger::init_from_env(env_logger::Env::default().default_filter_or("info"));
     let host = env::var("HOST").unwrap_or_else(|_| "0.0.0.0".into());
     let port: u16 = env::var("PORT").ok().and_then(|p| p.parse().ok()).unwrap_or(8080);
